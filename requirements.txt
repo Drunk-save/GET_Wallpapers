@@ -1,0 +1,9 @@
+requests
+gevent
+lxml
+redis
+pymysql
+flask
+pytesseract
+aiohttp
+aioredis
