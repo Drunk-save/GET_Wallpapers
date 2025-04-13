@@ -1,0 +1,116 @@
+.gallery-container {
+    max-width: 100%;
+    /* 最大容器宽度 */
+    margin: 2rem 0;
+    /* 左右自动外边距改为0 */
+    padding: 20px;
+    overflow-x: auto;
+    /* 横向溢出时滚动 */
+}
+
+/* 图片网格布局 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /* 自动填充列 */
+    gap: 12px;
+    /* 缩小间距 */
+    padding: 10px 0;
+    /* 上下内边距 */
+}
+
+/* 单个图片项样式 */
+.image-item {
+    position: relative;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* 添加微阴影 */
+}
+
+/* 悬停效果 */
+.image-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    border-color: #007bff;
+}
+
+/* 选中状态 */
+.image-item.selected {
+    border-color: #28a745;
+    background: rgba(40, 167, 69, 0.05);
+}
+
+/* 缩略图样式 */
+.thumbnail {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+/* 文件名标签 */
+.file-name {
+    font-size: 0.8rem;
+    margin-top: 6px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.85rem;
+}
+
+/* 复选框隐藏 */
+.file-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* 选中状态图标 */
+.selected::after {
+    content: "✓";
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: #28a745;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+/* 容器强制左对齐 */
+.image-grid {
+    justify-content: flex-start !important;
+}
+
+.download-btn {
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.download-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.download-btn:hover:not(:disabled) {
+    background-color: #218838;
+}

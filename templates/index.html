@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}最新壁纸 - 首页{% endblock %}
+
+{% block content %}
+<section class="wallpaper-list">
+    <h2>最新上传</h2>
+    <div class="gallery-container">
+        <div class="image-grid">
+            {% for wp in wallpapers %}
+            <label class="image-item">
+                <input type="checkbox" class="file-input" id="{{ wp.url }}">
+                <img src="{{ wp.url }}" class="thumbnail">
+                <span class="file-name">id:{{ wp.id }}</span>
+            </label>
+            {% else %}
+            <p class="no-data">暂无壁纸数据</p>
+            {% endfor %}
+
+        </div>
+    </div>
+    <button id="downloadBtn" class="download-btn" disabled>确定下载选中图片</button>
+</section>
+{% endblock %}
